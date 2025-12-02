@@ -1,29 +1,29 @@
-# Neo4j Agent Framework Exploration ???
+# Neo4j Agent Framework Exploration
 
 Repository for exploring Graph Databases with Neo4j using the Microsoft Agent Framework, with a focus on MCP (Model Context Protocol) integration and advanced agentic AI scenarios.
 
-## ?? Project Goals
+## Project Goals
 
-This repository explores innovative use cases combining Neo4j graph databases with AI agents, including:
+This repository is meant to explores innovative use cases combining Neo4j graph databases with AI agents, including:
 
-- **Graph Database Detective** ?? - Interactive crime investigation using graph relationships (current demo)
+- **Graph Database Detective** - Interactive crime investigation using graph relationships (current demo)
 - **GraphRAG** - Retrieval Augmented Generation powered by graph structures
 - **Agentic Memory** - Long-term memory systems for AI agents using graph databases
 - **Fraud Detection** - Real-time fraud pattern detection using RAG and agentic AI
 - **Advanced MCP Integration** - Exploring Model Context Protocol patterns with Neo4j
 
-## ?? Current Projects
+## Current Projects
 
 ### GraphDatabaseDetective
 
 An interactive detective agent demo that uses Neo4j graph database to investigate crimes, analyze relationships, and uncover patterns.
 
 **Key Features:**
-- ??? AI agent with Golden Age detective personality ("Holmsworth Marot")
-- ?? Real-time Neo4j graph database queries via MCP
-- ?? Natural language investigation interface
-- ?? Pattern analysis across crime networks
-- ?? Deductive reasoning with graph relationships
+- AI agent with Golden Age detective personality ("Holmsworth Marot")
+- Real-time Neo4j graph database queries via MCP
+- Natural language investigation interface
+- Pattern analysis across crime networks
+- Deductive reasoning with graph relationships
 
 **Technology Stack:**
 - .NET 9 / C# 13.0
@@ -32,7 +32,7 @@ An interactive detective agent demo that uses Neo4j graph database to investigat
 - Neo4j (via MCP stdio transport)
 - ModelContextProtocol client library
 
-## ?? Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -69,16 +69,16 @@ AZURE_OPENAI_API_KEY=your_api_key
 - "Find all crimes that occurred near the waterfront"
 - "What connections exist between these two victims?"
 
-## ?? Documentation
+## Documentation
 
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Detailed project structure and design decisions
 - See individual project folders for specific documentation
 
-## ?? Collaboration
+## Collaboration
 
 This demo was created in collaboration with **Zaid Zaim** ([@zaidzaim](https://github.com/zaidzaim)), who provided invaluable support with Neo4j MCP integration, environment configuration, and countless ideas that brought this detective to life!
 
-## ?? Future Explorations
+## Future Explorations
 
 We plan to expand this repository with additional demos showcasing:
 
@@ -88,10 +88,10 @@ We plan to expand this repository with additional demos showcasing:
 4. **Multi-Agent Collaboration** - Agents working together using shared graph knowledge
 5. **Temporal Graph Analysis** - Time-series investigation patterns
 
-## ?? License
+## License
 
 See [LICENSE](LICENSE) file for details.
 
-## ?? Acknowledgments
+## Acknowledgments
 
 Special thanks to Zaid Zaim for his expertise in graph databases and MCP integration, and for the collaborative brainstorming sessions that made this project possible!
