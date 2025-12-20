@@ -4,9 +4,11 @@ Repository for exploring Graph Databases with Neo4j using the Microsoft Agent Fr
 
 ## Project Goals
 
-This repository is meant to explores innovative use cases combining Neo4j graph databases with AI agents, including:
+This repository explores innovative use cases combining Neo4j graph databases with AI agents, including:
 
-- **Graph Database Detective** - Interactive crime investigation using graph relationships (current demo)
+- **Knowledge Graph** - Using Neo4j to represent and query complex domain relationships with structured knowledge graphs that enable sophisticated analytical reasoning
+  - **Graph Database Detective** (current demo) - Interactive crime investigation using graph relationships to analyze criminal networks, patterns, and connections
+  - **FinNewsImpactGraph** (current demo) - Financial contagion modeling demonstrating risk propagation through corporate networks, performing graph analytics like impact scoring and path-based reasoning across ownership, partnership, and supply-chain relationships
 - **GraphRAG** - Retrieval Augmented Generation powered by graph structures
 - **Agentic Memory** - Long-term memory systems for AI agents using graph databases
 - **Fraud Detection** - Real-time fraud pattern detection using RAG and agentic AI
@@ -14,7 +16,7 @@ This repository is meant to explores innovative use cases combining Neo4j graph 
 
 ## Current Projects
 
-### GraphDatabaseDetective
+### 1. GraphDatabaseDetective
 
 An interactive detective agent demo that uses Neo4j graph database to investigate crimes, analyze relationships, and uncover patterns.
 
@@ -31,6 +33,36 @@ An interactive detective agent demo that uses Neo4j graph database to investigat
 - Azure OpenAI (gpt-4o-chat)
 - Neo4j (via MCP stdio transport)
 - ModelContextProtocol client library
+
+📂 [View Project](GraphDatabaseDetective/)
+
+### 2. FinNewsImpactGraph
+
+A financial contagion prototype demonstrating risk propagation through corporate networks using Neo4j graph analytics. Shows how negative news events can cascade through ownership, partnership, and supply-chain relationships.
+
+**Key Features:**
+- Financial graph model with companies, markets, countries, and sectors
+- Risk propagation algorithm using weighted graph paths
+- News event impact analysis with sentiment scoring
+- Interactive Neo4j Browser visualization of propagation neighborhoods
+- Two demo apps: analytics runner + AI chat interface with MCP integration
+- Docker-based local development environment
+
+**Technology Stack:**
+- .NET 10 / C# 13.0
+- Neo4j Community Edition (Docker)
+- Neo4j.Driver for Bolt protocol
+- Azure OpenAI integration (chat app)
+- MCP for natural language graph queries
+- APOC procedures for advanced analytics
+
+**Use Cases:**
+- Supply chain risk assessment
+- Financial contagion modeling
+- Corporate relationship network analysis
+- What-if scenario testing for market shocks
+
+📂 [View Project](FinNewsImpactGraph/) | 📖 [Architecture](FinNewsImpactGraph/ARCHITECTURE.md) | 📊 [Schema](FinNewsImpactGraph/GraphDbSchema.md)
 
 ## Getting Started
 
