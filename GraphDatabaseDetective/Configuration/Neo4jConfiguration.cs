@@ -60,10 +60,11 @@ public class Neo4jConfiguration
 
     /// <summary>
     /// Gets environment variables dictionary for MCP client.
+    /// mcp-neo4j-cypher expects these specific variable names.
     /// </summary>
-    public Dictionary<string, string?> GetEnvironmentVariables()
+    public IDictionary<string, string?> GetEnvironmentVariablesForMcp()
     {
-        return new Dictionary<string, string?>
+        return new Dictionary<string, string?>(StringComparer.Ordinal)
         {
             ["NEO4J_URI"] = Uri,
             ["NEO4J_USERNAME"] = Username,

@@ -23,7 +23,7 @@ using ModelContextProtocol.Client;
 namespace GraphDatabaseDetective.MCP;
 
 /// <summary>
-/// Factory for creating MCP clients connected to Neo4j database.
+/// Factory for creating MCP clients connected to Neo4j database using stdio transport.
 /// </summary>
 public static class Neo4jMcpClientFactory
 {
@@ -32,16 +32,24 @@ public static class Neo4jMcpClientFactory
     /// </summary>
     /// <param name="config">Neo4j configuration</param>
     /// <returns>Connected MCP client</returns>
-    public static Task<IMcpClient> CreateAsync(Neo4jConfiguration config)
+    public static async Task<IMcpClient> CreateAsync(Neo4jConfiguration config)
     {
+        // Find uvx in WinGet packages folder
+        var uvxPath = Directory.GetFiles(
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), 
+                "Microsoft", "WinGet", "Packages"),
+            "uvx.exe",
+            SearchOption.AllDirectories).FirstOrDefault() ?? "uvx";
+
         var transport = new StdioClientTransport(new()
         {
             Name = "Neo4jCrimeDatabaseMCP",
-            Command = "uvx",
-            Arguments = ["mcp-neo4j-cypher@0.5.0", "--transport", "stdio"],
-            EnvironmentVariables = config.GetEnvironmentVariables()
+            Command = uvxPath,
+            // Use latest 0.5.2 which fixed FastMCP 3.x compatibility (removed dependencies arg)
+            Arguments = ["mcp-neo4j-cypher@0.5.2", "--transport", "stdio"],
+            EnvironmentVariables = config.GetEnvironmentVariablesForMcp()
         });
 
-        return McpClientFactory.CreateAsync(transport);
+        return await McpClientFactory.CreateAsync(transport);
     }
 }
